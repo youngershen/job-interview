@@ -46,6 +46,16 @@ O(1)
 
 因为没有辅助空间的使用, 所以空间复杂度为 O(1)
 
+参考文档:
+
+https://www.geeksforgeeks.org/bubble-sort/
+https://www.geeksforgeeks.org/time-and-space-complexity-analysis-of-bubble-sort/
+
+其他:
+
+geeksforgeeks 的文档中还有说到使用递归求解冒泡排序, 也有其他的冒泡排序的变种,
+这个可以慢慢研究, 这里只实现了最简单的一个冒泡排序算法.
+
 **/
 
 void print_int_array(int * a, int l)
@@ -102,7 +112,7 @@ int main(int argc, char** argv)
 {
     srand(time(NULL));  // 使用当前时间作为种子来生成随机数
 
-    int len = 5;
+    int len = 99999;
     int a[len];
     get_randint_array(a, len);
     print_int_array(a, len);
