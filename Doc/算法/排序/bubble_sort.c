@@ -109,7 +109,6 @@ void bubble_sort(int* a, int l)
                 swapped = true;
             }
         }
-
         // 如果在一次循环当中没有个元素的位置被交换
         // 那么就说明数组已经有序了, 就不需要接下来的循环了, 所以直接 break
         if(!swapped) break;
