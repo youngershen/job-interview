@@ -1,7 +1,8 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
-
+#define MIN 10
+#define MAX 100
 
 void print_int_array(int * a, int l)
 {
@@ -36,6 +37,11 @@ void get_randint_array(int* a, int l)
     }
 }
 
+void take_partation()
+{
+
+}
+
 void quick_sort(int* a, int l)
 {
 
@@ -44,5 +50,13 @@ void quick_sort(int* a, int l)
 int main(int* argv, int argc)
 {
 
+    srand(time(NULL));
+    int len = 10;
+    int arr[len];
+    get_randint_array(arr, len);
+    printf("Before Sort: \r\n");
+    print_int_array(arr, len);
+    printf("After Sort: \r\n");
+    print_int_array(arr, len);
 }
 
