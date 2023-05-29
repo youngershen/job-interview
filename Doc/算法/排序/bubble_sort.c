@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <stdbool.h>
 #define MIN 10
 #define MAX 100
 
@@ -93,8 +94,11 @@ void get_randint_array(int* a, int l)
 
 void bubble_sort(int* a, int l)
 {
+
+    bool swapped;
     for(int i = 0 ; i < l - 1; i ++)
     {
+        swapped = false;
         for(int n = 0; n < l - i - 1 ; n++)
         {
             if(*(a + n) > *(a + n + 1))
@@ -102,9 +106,13 @@ void bubble_sort(int* a, int l)
                 int temp = *(a + n);
                 *(a + n) = *(a + n + 1);
                 *(a + n + 1) = temp;
+                swapped = true;
             }
-
         }
+
+        // 如果在一次循环当中没有个元素的位置被交换
+        // 那么就说明数组已经有序了, 就不需要接下来的循环了, 所以直接 break
+        if(!swapped) break;
     }
 }
 
@@ -112,7 +120,7 @@ int main(int argc, char** argv)
 {
     srand(time(NULL));  // 使用当前时间作为种子来生成随机数
 
-    int len = 99999;
+    int len = 10;
     int a[len];
     get_randint_array(a, len);
     print_int_array(a, len);
@@ -120,7 +128,5 @@ int main(int argc, char** argv)
     bubble_sort(a, len);
     print_int_array(a, len);
 
-
-    printf("%d", a[0]);
     return 0;
 }
