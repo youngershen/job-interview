@@ -1,6 +1,6 @@
 # Bubble Sort - 冒泡排序
 
-## 简介
+## 说明
 
 冒泡排序是一种不稳定的排序算法, 它的基本思想是通过比较相邻的元素,
 将较大的元素逐步向右移动, 直到整个序列有序.
@@ -49,6 +49,8 @@ O(1)
 * [bubble-sort](https://www.geeksforgeeks.org/bubble-sort/)
 * [time and space complexity analysis of bubble sort](https://www.geeksforgeeks.org/time-and-space-complexity-analysis-of-bubble-sort/)
 * [recursive bubble sort](https://www.geeksforgeeks.org/recursive-bubble-sort/)
+
+
 ## 其他
 
 geeksforgeeks 的文档中还有说到使用递归求解冒泡排序, 也有其他的冒泡排序的变种,

@@ -37,8 +37,22 @@ void get_randint_array(int* a, int l)
     }
 }
 
-void take_partation()
+void take_partation(int * a, int low, int high)
 {
+    // pivot 的位置
+    int index = low - 1;
+    // 取数组的末尾值为 pivot
+    int pivot = *(a + high);
+
+    // 在循环中进行比较和替换
+    for(int i = low; i < high ; i ++)
+    {
+        if(*(a + i) < pivot)
+        {
+            // 只要当前的值小于 pivot, 那么位置就自增一
+            index += 1;
+        }
+    }
 
 }
 
@@ -54,9 +68,16 @@ int main(int* argv, int argc)
     int len = 10;
     int arr[len];
     get_randint_array(arr, len);
+
+    printf("\r\n");
     printf("Before Sort: \r\n");
+
+    printf("\r\n");
     print_int_array(arr, len);
+    printf("\r\n");
+
     printf("After Sort: \r\n");
+    printf("\r\n");
     print_int_array(arr, len);
 }
 
