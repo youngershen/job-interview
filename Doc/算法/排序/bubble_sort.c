@@ -68,9 +68,14 @@ int main(int argc, char** argv)
     int len = 10;
     int a[len];
     get_randint_array(a, len);
+    printf("\r\n");
+    printf("Before Sort: \r\n\r\n");
     print_int_array(a, len);
-
     bubble_sort(a, len);
+
+    printf("\r\n");
+
+    printf("After Sort: \r\n\r\n");
     print_int_array(a, len);
 
     return 0;
