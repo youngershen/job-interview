@@ -173,6 +173,7 @@ int partation(int* arr, int low, int high)
 {
     // 关键是找到 pivot
     // 思路怎么又忘了呢, 不是昨天学了一天么
+    // 哈哈 最终还是成功的想了起来, 完成了快速排序
     int i = low - 1;
     int pv = *(arr + high);
 
