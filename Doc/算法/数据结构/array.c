@@ -121,35 +121,6 @@ int set_element(int* arr, int len, int i, int d)
     }
 }
 
-int delete_element(int* arr, int i)
-{
-
-}
-
-int insert_element(int* arr, int i, int d)
-{
-
-}
-
-int merge_array(int* arr1, int len1, int * arr2, int len2)
-{
-
-}
-
-int append_element(int* arr, int d)
-{
-
-}
-
-int push_element(int* arr, int d)
-{
-
-}
-
-int malloc_array(int* arr)
-{
-
-}
 
 void bubble_sort(int* arr, int len)
 {
