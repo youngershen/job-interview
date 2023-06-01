@@ -89,7 +89,7 @@ LINKED_LIST init_rand_linked_list(int len)
 
 void print_linked_list(LINKED_LIST list)
 {
-    printf("Print Linked List :\r\n");
+    printf("\r\nPrint Linked List :\r\n");
     NODE * node = list;
 
     do
@@ -108,17 +108,51 @@ void print_linked_list(LINKED_LIST list)
 }
 
 // 链表头部插入算法
-int push_linked_list(LINKED_LIST list)
+// 直接生成节点, 并将节点的 next
+// 指向当前链表的头部即可
+// 很明显时间复杂度为 O(1)
+LINKED_LIST push_linked_list(LINKED_LIST list, int item)
 {
+    NODE * node = (NODE * ) malloc(sizeof(NODE));
+    node->data = item;
+    node->next = list;
+    return node;
 }
 
-// lianbi
+// 链表尾部插入
+void append_linked_list(LINKED_LIST list, int item)
+{
+    NODE * node = (NODE * ) malloc(sizeof(NODE));
+    node->data = item;
+    node->next = NULL;
 
+    NODE * tail = list;
+    while(tail->next != NULL)
+    {
+        tail = tail->next;
+    }
+
+    tail->next = node;
+}
+
+// 链表任意位置的插入
+int insert_linked_list(LINKED_LIST list, int pos, int item)
+{
+
+}
 
 int main(char* argv, int argc)
 {
     srand(time(NULL));
-
     LINKED_LIST head = init_rand_linked_list(10);
     print_linked_list(head);
+
+    printf("\r\nPush to linked list\r\n");
+    head = push_linked_list(head, 1000);
+    print_linked_list(head);
+
+    printf("\r\nAppend to linked list\r\n");
+    append_linked_list(head, 1000);
+    print_linked_list(head);
+
 }
