@@ -94,7 +94,14 @@ void print_linked_list(LINKED_LIST list)
 
     do
     {
-        printf("%d\r\n", node->data);
+        if(node->next == NULL)
+        {
+            printf("%d", node->data);
+        }
+        else
+        {
+            printf("%d, ", node->data);
+        }
         node = node->next;
 
     }while( node!= NULL);
