@@ -135,10 +135,56 @@ void append_linked_list(LINKED_LIST list, int item)
     tail->next = node;
 }
 
-// 链表任意位置的插入
+int get_length(LINKED_LIST list)
+{
+    NODE * head = list;
+    int len = 1;
+    while(head->next != NULL)
+    {
+        len += 1;
+        head = head->next;
+    }
+
+    return len;
+}
+
+// 链表任意位置元素之后插入
 int insert_linked_list(LINKED_LIST list, int pos, int item)
 {
+    int len = get_length(list);
 
+    if(pos < 0 || pos > len - 1)
+    {
+        // 插入失败
+        return -1;
+    }
+
+    // find pos
+    NODE * pos_node = list;
+    int i = 0;
+    while(i != pos && pos_node->next != NULL)
+    {
+        i += 1;
+        pos_node = pos_node->next;
+    }
+
+    // create new node
+    NODE * new_node = (NODE * ) malloc(sizeof(NODE));
+    new_node->data = item;
+
+    // set new node's next
+    if(pos_node->next != NULL)
+    {
+        new_node->next = pos_node->next;
+        pos_node->next = new_node;
+    }
+    else
+    {
+        new_node->next = NULL;
+        pos_node->next = new_node;
+    }
+
+    return 0;
 }
 
 int main(char* argv, int argc)
@@ -153,6 +199,14 @@ int main(char* argv, int argc)
 
     printf("\r\nAppend to linked list\r\n");
     append_linked_list(head, 1000);
+    print_linked_list(head);
+
+    printf("\r\nGet Length: \r\n");
+    int len = get_length(head);
+    printf("Length: %d", len);
+
+    printf("\r\nInsert Linked list:\r\n");
+    insert_linked_list(head,11 , 999);
     print_linked_list(head);
 
 }
