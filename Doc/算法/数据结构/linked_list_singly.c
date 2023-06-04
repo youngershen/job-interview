@@ -206,7 +206,7 @@ int main(char* argv, int argc)
     printf("Length: %d", len);
 
     printf("\r\nInsert Linked list:\r\n");
-//    insert_linked_list(head,11 , 999);
-//    print_linked_list(head);
+    insert_linked_list(head,11 , 999);
+    print_linked_list(head);
 
 }
