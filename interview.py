@@ -6,3 +6,6 @@
 # Cell: 13811754531
 # Wechat: 13811754531
 # Email : shenyangang@163.com
+
+class Person:
+    pass
