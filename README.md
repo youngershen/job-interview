@@ -48,7 +48,7 @@
 ##### HTML
 ##### CSS
 
-[//]: # (##### Javascript)
+##### Javascript
 
 #### 前端框架
 ##### VUE 
