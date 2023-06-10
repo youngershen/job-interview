@@ -13,7 +13,7 @@
 #include<stdlib.h>
 #include<time.h>
 #include<stdbool.h>
-#define MIN 1
+#define MIN 10
 #define MAX 100
 
 void print_int_array(int * a, int l)
