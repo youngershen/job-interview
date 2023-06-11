@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdbool.h>
+#include <stddef.h>
 #define MIN 10
 #define MAX 100
 

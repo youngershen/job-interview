@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include<time.h>
-#include<stdbool.h>
+#include <time.h>
+#include <stdbool.h>
 #define MIN 10
 #define MAX 100
 #define BUFF_SIZE 10
@@ -111,7 +111,7 @@ void print_linked_list(LINKED_LIST list)
 // 直接生成节点, 并将节点的 next
 // 指向当前链表的头部即可
 // 很明显时间复杂度为 O(1)
-LINKED_LIST push_linked_list(LINKED_LIST list, int item)
+LINKED_LIST push(LINKED_LIST list, int item)
 {
     NODE * node = (NODE * ) malloc(sizeof(NODE));
     node->data = item;
@@ -120,7 +120,7 @@ LINKED_LIST push_linked_list(LINKED_LIST list, int item)
 }
 
 // 链表尾部插入
-void append_linked_list(LINKED_LIST list, int item)
+void append(LINKED_LIST list, int item)
 {
     NODE * node = (NODE * ) malloc(sizeof(NODE));
     node->data = item;
@@ -149,7 +149,7 @@ int get_length(LINKED_LIST list)
 }
 
 // 链表任意位置元素之后插入
-int insert_linked_list(LINKED_LIST list, int pos, int item)
+int insert(LINKED_LIST list, int pos, int item)
 {
     int len = get_length(list);
 
@@ -187,6 +187,29 @@ int insert_linked_list(LINKED_LIST list, int pos, int item)
     return 0;
 }
 
+
+// 获取链表的最后一个节点
+// 复杂度为  O(n)
+NODE* get_last_node(LINKED_LIST head)
+{
+}
+
+
+/*
+ *
+ * 从链表中删除某个节点
+ * 方法是找到该节点的父节点
+ * 将父节点的 next 指针指向 node 的 next
+ * 所指向的节点即可
+ * 最后需要 free 掉 node 指向的节点
+ *
+ */
+int remove_node(LINKED_LIST head, NODE* node)
+{
+
+
+}
+
 int main(char* argv, int argc)
 {
     srand(time(NULL));
@@ -194,11 +217,11 @@ int main(char* argv, int argc)
     print_linked_list(head);
 
     printf("\r\nPush to linked list\r\n");
-    head = push_linked_list(head, 1000);
+    head = push(head, 1000);
     print_linked_list(head);
 
     printf("\r\nAppend to linked list\r\n");
-    append_linked_list(head, 1000);
+    append(head, 1000);
     print_linked_list(head);
 
     printf("\r\nGet Length: \r\n");
@@ -206,7 +229,7 @@ int main(char* argv, int argc)
     printf("Length: %d", len);
 
     printf("\r\nInsert Linked list:\r\n");
-    insert_linked_list(head,11 , 999);
+    insert(head,11 , 999);
     print_linked_list(head);
 
 }
