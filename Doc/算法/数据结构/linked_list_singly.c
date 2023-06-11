@@ -192,6 +192,45 @@ int insert(LINKED_LIST list, int pos, int item)
 // 复杂度为  O(n)
 NODE* get_last_node(LINKED_LIST head)
 {
+    NODE * node = head;
+
+    while(node->next != NULL)
+    {
+        node = node->next;
+    }
+    return node;
+}
+
+// 搜索具有某个特定值的节点
+// 并返回找到的第一个节点
+// 复杂度 O(n)
+NODE* search(LINKED_LIST head, int value)
+{
+    NODE * node = head;
+
+    while(node->next != NULL && node->data != value)
+    {
+        node = node->next;
+    }
+
+    if(node->data == value)
+    {
+        return node;
+    }
+    else
+    {
+        return NULL;
+    }
+}
+
+NODE * pop_front(LINKED_LIST head)
+{
+
+}
+
+NODE * pop_back(LINKED_LIST head)
+{
+
 }
 
 
@@ -207,6 +246,11 @@ NODE* get_last_node(LINKED_LIST head)
 int remove_node(LINKED_LIST head, NODE* node)
 {
 
+}
+
+// 删除指定位置的 node 并返回
+NODE* remove_index(LINKED_LIST head, int index)
+{
 
 }
 
@@ -216,20 +260,35 @@ int main(char* argv, int argc)
     LINKED_LIST head = init_rand_linked_list(10);
     print_linked_list(head);
 
-    printf("\r\nPush to linked list\r\n");
+    printf("\r\n\r\nPush to linked list\r\n");
     head = push(head, 1000);
     print_linked_list(head);
 
-    printf("\r\nAppend to linked list\r\n");
+    printf("\r\n\r\nAppend to linked list\r\n");
     append(head, 1000);
     print_linked_list(head);
 
-    printf("\r\nGet Length: \r\n");
+    printf("\r\n\r\nGet Length: \r\n");
     int len = get_length(head);
     printf("Length: %d", len);
 
-    printf("\r\nInsert Linked list:\r\n");
+    printf("\r\n\r\nInsert Linked list:\r\n");
     insert(head,11 , 999);
     print_linked_list(head);
+
+    printf("\r\n\r\nGet last node: \r\n");
+    NODE * node = get_last_node(head);
+    printf("Last node value is %d\r\n", node->data);
+
+    printf("\r\n\r\nSearch:\r\n");
+    NODE * node2 = search(head, 999);
+    if(node2 != NULL)
+    {
+        printf("Search result is %d\r\n", node2->data);
+    }
+    else
+    {
+        printf("Search not found\r\n");
+    }
 
 }
